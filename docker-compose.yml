@@ -12,6 +12,8 @@ services:
       - BACKEND_HOST=${BACKEND_HOST}
     volumes:
       - ./backend:/app
+      - /Users/roronoazoro/Downloads/Focus/n8n/uploads:/app/uploads
+      - /Users/roronoazoro/Downloads/Focus/n8n/Pictures:/static
     expose:
       - "${BACKEND_PORT}"  # 不再对外暴露，用于 nginx 内部通信
 
