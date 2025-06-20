@@ -10,9 +10,8 @@ WORKDIR /app
 # 拷贝前端源码
 COPY ./BillNote_frontend /app
 
-# 安装依赖并构建，使用--no-interaction选项禁用交互式提示
-ENV PNPM_INTERACTIVE=false
-RUN pnpm install --no-interaction && pnpm run build
+# 安装依赖并构建
+RUN pnpm install --force && pnpm run build
 
 # --- 阶段2：使用 nginx 作为静态服务器 ---
 FROM nginx:1.25-alpine
